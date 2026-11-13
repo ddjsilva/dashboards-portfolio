@@ -1,0 +1,120 @@
+{
+  "source": "https://www.diogosilvaportfolio.com",
+  "capturedAt": "2026-11-13T01:16:50.595Z",
+  "viewport": "1440x900 @2x",
+  "pages": [
+    {
+      "slug": "home",
+      "url": "https://www.diogosilvaportfolio.com/",
+      "title": "Portfolio Diogo Silva | Soluções Analíticas para o seu Negócio",
+      "httpStatus": 200,
+      "images": 14,
+      "iframes": 0,
+      "pageHeightPx": 4306
+    },
+    {
+      "slug": "dashboard-comercial",
+      "url": "https://www.diogosilvaportfolio.com/dashboard-comercial",
+      "title": "Dashboard comercial | Portfólio Diogo Silva",
+      "httpStatus": 200,
+      "images": 0,
+      "iframes": 1,
+      "pageHeightPx": 1160
+    },
+    {
+      "slug": "dashboard-fluxo-de-caixa",
+      "url": "https://www.diogosilvaportfolio.com/dashboard-fluxo-de-caixa",
+      "title": "Dashboard fluxo de caixa | Portfólio Diogo Silva",
+      "httpStatus": 200,
+      "images": 0,
+      "iframes": 1,
+      "pageHeightPx": 1384
+    },
+    {
+      "slug": "dashboard-people-analytics",
+      "url": "https://www.diogosilvaportfolio.com/dashboard-people-analytics",
+      "title": "Dashboard people analytics | Portfólio Diogo Silva",
+      "httpStatus": 200,
+      "images": 0,
+      "iframes": 1,
+      "pageHeightPx": 1498
+    },
+    {
+      "slug": "copia-dashboard-people-analytics",
+      "url": "https://www.diogosilvaportfolio.com/c%C3%B3pia-dashboard-people-analytics",
+      "title": "Dashboard Supply chain | Portfólio Diogo Silva",
+      "httpStatus": 200,
+      "images": 0,
+      "iframes": 1,
+      "pageHeightPx": 1009
+    }
+  ],
+  "images": [
+    {
+      "name": "c1246e_b84d75aca95c4b4ba6459af62369227d~mv2.jpeg",
+      "url": "https://static.wixstatic.com/media/c1246e_b84d75aca95c4b4ba6459af62369227d~mv2.jpeg"
+    },
+    {
+      "name": "11062b_58f2c990f64a47e48331c7d501bcf242~mv2.png",
+      "url": "https://static.wixstatic.com/media/11062b_58f2c990f64a47e48331c7d501bcf242~mv2.png"
+    },
+    {
+      "name": "c1246e_984a0ed74a48484794b6afdfc66ba0c6~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_984a0ed74a48484794b6afdfc66ba0c6~mv2.png"
+    },
+    {
+      "name": "11062b_60c5fc4a3ecd49f2a697206b09eeace1~mv2.png",
+      "url": "https://static.wixstatic.com/media/11062b_60c5fc4a3ecd49f2a697206b09eeace1~mv2.png"
+    },
+    {
+      "name": "c1246e_b586022d30434c1ca4ae6c6fa028041c~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_b586022d30434c1ca4ae6c6fa028041c~mv2.png"
+    },
+    {
+      "name": "c1246e_355694ef1d5445d3a2eab4483d3813d2~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_355694ef1d5445d3a2eab4483d3813d2~mv2.png"
+    },
+    {
+      "name": "c1246e_0714086fdb424804be4ace7ab81f5d95~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_0714086fdb424804be4ace7ab81f5d95~mv2.png"
+    },
+    {
+      "name": "c1246e_ac4948b8ead345b7b374422461325987~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_ac4948b8ead345b7b374422461325987~mv2.png"
+    },
+    {
+      "name": "c1246e_c216fceeba9d417695208d6064e07d4c~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_c216fceeba9d417695208d6064e07d4c~mv2.png"
+    },
+    {
+      "name": "c1246e_4a7f7b967a8a41edb2f18c46d5e3dfa9~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_4a7f7b967a8a41edb2f18c46d5e3dfa9~mv2.png"
+    },
+    {
+      "name": "c1246e_7ceb07b9be3f4c02aeb35e844d507a16~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_7ceb07b9be3f4c02aeb35e844d507a16~mv2.png"
+    },
+    {
+      "name": "c1246e_78d44e6c13324e24b064101e177b3046~mv2.png",
+      "url": "https://static.wixstatic.com/media/c1246e_78d44e6c13324e24b064101e177b3046~mv2.png"
+    },
+    {
+      "name": "11062b_a193068045064f4fa21b07cd12dae779~mv2.png",
+      "url": "https://static.wixstatic.com/media/11062b_a193068045064f4fa21b07cd12dae779~mv2.png"
+    },
+    {
+      "name": "7528824071724d12a3e6c31eee0b40d4.png",
+      "url": "https://static.wixstatic.com/media/7528824071724d12a3e6c31eee0b40d4.png"
+    }
+  ],
+  "blockedOrFailedRequests": [
+    "frog.wix.com (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "panorama.wixapps.net (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "browser.sentry-cdn.com (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "js.monitor.azure.com (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "dc.services.visualstudio.com (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "pbivisuals.powerbi.com (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "appsource.powerbi.com (net::ERR_TUNNEL_CONNECTION_FAILED)",
+    "www.bing.com (net::ERR_TUNNEL_CONNECTION_FAILED)"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "url": "https://www.diogosilvaportfolio.com/dashboard-comercial",
+  "httpStatus": 200,
+  "title": "Dashboard comercial | Portfólio Diogo Silva",
+  "description": "",
+  "pageHeightPx": 1160,
+  "sections": [
+    {
+      "tag": "header",
+      "id": "SITE_HEADER",
+      "top": 0,
+      "height": 59,
+      "headings": []
+    },
+    {
+      "tag": "section",
+      "id": "comp-m9usvkbl",
+      "top": 59,
+      "height": 619,
+      "headings": [
+        "DASHBOARD COMERCIAL"
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "comp-m9usvkcg2",
+      "top": 678,
+      "height": 362,
+      "headings": []
+    },
+    {
+      "tag": "footer",
+      "id": "SITE_FOOTER",
+      "top": 1040,
+      "height": 120,
+      "headings": []
+    }
+  ],
+  "iframes": [
+    "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_d5c9186a1b8573a6fc00ce4ef6f7eb9e.html"
+  ],
+  "images": [],
+  "blocks": [
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HOME"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "EXPERIENCIAS"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HABILIDADES"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "PORTFÓLIO"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "CONTATO"
+    },
+    {
+      "tag": "h1",
+      "top": 69,
+      "text": "DASHBOARD COMERCIAL"
+    },
+    {
+      "tag": "p",
+      "top": 684,
+      "text": "Neste dashboard é possivel analisar​"
+    },
+    {
+      "tag": "p",
+      "top": 726,
+      "text": "​​"
+    },
+    {
+      "tag": "p",
+      "top": 741,
+      "text": "- Total de vendas"
+    },
+    {
+      "tag": "p",
+      "top": 766,
+      "text": "- Total de Lucro,"
+    },
+    {
+      "tag": "p",
+      "top": 791,
+      "text": "- Margem de lucro"
+    },
+    {
+      "tag": "p",
+      "top": 817,
+      "text": "- Cobertura de clientes\n- A abertura dos indicadores por Pais e marca\n- Comparativo anual do Lucro"
+    },
+    {
+      "tag": "p",
+      "top": 917,
+      "text": "Conseguimos observar que 2018 foi o melhor ano de performance em vendas e em lucro, as vendas são bem distribuidas entre os continentes tendo uma participação maior na Europa, que detém uma carteira de clientes mais diversificada. Além disso, ao analisar o lucro ao longo dos anos, é possivel obervar que a empresa vem crescendo em todos os anos​."
+    },
+    {
+      "tag": "p",
+      "top": 1094,
+      "text": "© 2025 by Diogo Silva. Powered and secured by Wix"
+    },
+    {
+      "tag": "a",
+      "top": 1094,
+      "text": "Wix",
+      "href": "https://wix.com/?utm_campaign=vir_created_with"
+    }
+  ],
+  "powerbi": [
+    {
+      "embed": "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_d5c9186a1b8573a6fc00ce4ef6f7eb9e.html",
+      "report": "https://app.powerbi.com/view?r=eyJrIjoiNWRiMjA0ZmMtMjkyZC00YzhkLWFiZTgtMWJmZjFlNjlmMjlkIiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9&pageName=a4d9a10c66757be5d8dd",
+      "title": "Dashboard Comercial"
+    }
+  ]
+}

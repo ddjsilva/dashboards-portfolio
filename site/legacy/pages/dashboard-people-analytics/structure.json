@@ -1,0 +1,188 @@
+{
+  "url": "https://www.diogosilvaportfolio.com/dashboard-people-analytics",
+  "httpStatus": 200,
+  "title": "Dashboard people analytics | Portfólio Diogo Silva",
+  "description": "",
+  "pageHeightPx": 1498,
+  "sections": [
+    {
+      "tag": "header",
+      "id": "SITE_HEADER",
+      "top": 0,
+      "height": 59,
+      "headings": []
+    },
+    {
+      "tag": "section",
+      "id": "comp-m9zx5tz8",
+      "top": 59,
+      "height": 619,
+      "headings": [
+        "DASHBOARD PEOPLE ANALYTICS"
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "comp-m9zx5tzv2",
+      "top": 678,
+      "height": 700,
+      "headings": []
+    },
+    {
+      "tag": "footer",
+      "id": "SITE_FOOTER",
+      "top": 1378,
+      "height": 120,
+      "headings": []
+    }
+  ],
+  "iframes": [
+    "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_be5a557c6508143c8535d01be719337f.html"
+  ],
+  "images": [],
+  "blocks": [
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HOME"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "EXPERIENCIAS"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HABILIDADES"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "PORTFÓLIO"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "CONTATO"
+    },
+    {
+      "tag": "h1",
+      "top": 69,
+      "text": "DASHBOARD PEOPLE ANALYTICS"
+    },
+    {
+      "tag": "p",
+      "top": 684,
+      "text": "Neste dashboard é possivel analisar​"
+    },
+    {
+      "tag": "p",
+      "top": 726,
+      "text": "​​"
+    },
+    {
+      "tag": "p",
+      "top": 741,
+      "text": "- Total de contratações"
+    },
+    {
+      "tag": "p",
+      "top": 766,
+      "text": "- Total de demissões,"
+    },
+    {
+      "tag": "p",
+      "top": 791,
+      "text": "- Turnover segmentado em voluntário, involuntário e espontâneo"
+    },
+    {
+      "tag": "p",
+      "top": 817,
+      "text": "- A massa salarial da empresa\n- Percentual de má contratações"
+    },
+    {
+      "tag": "p",
+      "top": 867,
+      "text": "- Gastos com horas extras e Absenteísmo"
+    },
+    {
+      "tag": "p",
+      "top": 892,
+      "text": "- Tempo de retenção dos funcionários\n- Abertura dos indicadores por genêro, faixa etária, cargo e escolaridade"
+    },
+    {
+      "tag": "p",
+      "top": 943,
+      "text": "​"
+    },
+    {
+      "tag": "p",
+      "top": 968,
+      "text": "Regras de negócios"
+    },
+    {
+      "tag": "p",
+      "top": 1003,
+      "text": "Turnover: Rotatividade de funcionários nos ultimos 12 meses"
+    },
+    {
+      "tag": "p",
+      "top": 1028,
+      "text": "Turnover Involuntário: demissões por parte da empresa"
+    },
+    {
+      "tag": "p",
+      "top": 1053,
+      "text": "Turnover Voluntários: Demissões por parte do funcionário"
+    },
+    {
+      "tag": "p",
+      "top": 1078,
+      "text": "Turnover Espontanêa: Demissões por motivos não controlados (transferencia, abandono, fim de contrato)"
+    },
+    {
+      "tag": "p",
+      "top": 1104,
+      "text": "Absenteísmo: Faltas justificadas e injustificadas de funcionários"
+    },
+    {
+      "tag": "p",
+      "top": 1129,
+      "text": "Má contratações: Funcionários demitidos em menos de 6 meses"
+    },
+    {
+      "tag": "p",
+      "top": 1154,
+      "text": "Headcount: Quantidade de funcionários ativos"
+    },
+    {
+      "tag": "p",
+      "top": 1179,
+      "text": "​"
+    },
+    {
+      "tag": "p",
+      "top": 1204,
+      "text": "Conseguimos observar que 2013 foi o ano de maior contratação, tendo 110 contratações no periodo, o turnover no ultimo perído foi de 13,05% e atualmente a empresa contém um headcount de 249 funcionários, sendo a maioria entre 35 e 44 anos, faixa etária que também representa a maior quantidade de demissões. Já as más demissões, estão concentradas principalmente em cargos operacionais como operador, auxiliar e ajudante. Em relação a gastos com horas extras, conseguimos observar que o gasto representa 6,95% em relação ao total gasto com horas normais."
+    },
+    {
+      "tag": "p",
+      "top": 1432,
+      "text": "© 2025 by Diogo Silva. Powered and secured by Wix"
+    },
+    {
+      "tag": "a",
+      "top": 1432,
+      "text": "Wix",
+      "href": "https://wix.com/?utm_campaign=vir_created_with"
+    }
+  ],
+  "powerbi": [
+    {
+      "embed": "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_be5a557c6508143c8535d01be719337f.html",
+      "report": "https://app.powerbi.com/view?r=eyJrIjoiYTAxODYyNTktMzMzNi00N2U3LWE4YzEtNDMyY2Q0MzI2YWM5IiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9&pageName=7fb2e101f57a3e57d10d",
+      "title": "Dashboard People Analytics"
+    }
+  ]
+}

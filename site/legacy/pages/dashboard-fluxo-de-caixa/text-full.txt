@@ -1,0 +1,44 @@
+Skip to Main Content
+
+HOME
+
+EXPERIENCIAS
+
+HABILIDADES
+
+PORTFÓLIO
+
+CONTATO
+
+DASHBOARD FINANCEIRO E DE VENDAS
+
+Neste dashboard é possivel analisar​
+
+​
+
+- A receita operacional e a margem de contribuição mês a mês
+- A abertura da receita e da margem por modelo de venda e tipo de produto
+- A margem de contribuição aberta por fornecedor
+- O melhor mês de performance tanto em receita quando em margem
+
+- O Lucro operacional ao longo do periodo
+
+- Além disso, através do simulador de cenários, é possivel identificar oportunidades para aumentar o lucro operacional
+
+ 
+
+Conseguimos observar que as vendas estão concentradas em produtos alimentícios principalmente no varejo, além disso, houve uma queda geral em dezembro, com uma baixa performance na receita, porém sem afetar muito a margem. Outro fator preocupante é a concentração de 52% da receita no fornecedor Moinho Dois Irmãos, criando uma dependência do fornecedor, diminuindo o poder de negociação para novos produtos.
+
+​
+
+É Possivel chegar nos seguintes insights:
+
+ 
+
+- É necessária uma campanha mais forte para o final de ano
+
+- Aumentar a diluição de fornecedores, como sugestão seria interessante aumentar a participação do fornecedor Kappa Bebidas que tem a melhor margem entre os fornecedores
+
+- Melhorar as negociações da equipe de vendas online, que detém a pior margem de contribuição dos três modelos
+
+© 2025 by Diogo Silva. Powered and secured by Wix

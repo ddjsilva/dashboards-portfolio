@@ -1,0 +1,29 @@
+Skip to Main Content
+
+HOME
+
+EXPERIENCIAS
+
+HABILIDADES
+
+PORTFÓLIO
+
+CONTATO
+
+DASHBOARD de supply chain
+
+Neste dashboard é possivel analisar​
+
+​​
+
+- Pedidos entregues por estado
+
+- Lead times de entrega
+
+- Pedidos entregues no prazo (Ontime)
+
+- Pedidos com ruptura (Stockout)
+
+- Pedidos entregues no prazo e sem ruptura (OTIF)​​
+
+© 2025 by Diogo Silva. Powered and secured by Wix

@@ -1,0 +1,148 @@
+{
+  "url": "https://www.diogosilvaportfolio.com/dashboard-fluxo-de-caixa",
+  "httpStatus": 200,
+  "title": "Dashboard fluxo de caixa | Portfólio Diogo Silva",
+  "description": "",
+  "pageHeightPx": 1384,
+  "sections": [
+    {
+      "tag": "header",
+      "id": "SITE_HEADER",
+      "top": 0,
+      "height": 59,
+      "headings": []
+    },
+    {
+      "tag": "section",
+      "id": "comp-m7gmc2at",
+      "top": 59,
+      "height": 619,
+      "headings": [
+        "DASHBOARD FINANCEIRO E DE VENDAS"
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "comp-m7gmfaub",
+      "top": 678,
+      "height": 586,
+      "headings": []
+    },
+    {
+      "tag": "footer",
+      "id": "SITE_FOOTER",
+      "top": 1264,
+      "height": 120,
+      "headings": []
+    }
+  ],
+  "iframes": [
+    "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_0e072704a7e9e57c39ed809183828791.html"
+  ],
+  "images": [],
+  "blocks": [
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HOME"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "EXPERIENCIAS"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HABILIDADES"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "PORTFÓLIO"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "CONTATO"
+    },
+    {
+      "tag": "h1",
+      "top": 69,
+      "text": "DASHBOARD FINANCEIRO E DE VENDAS"
+    },
+    {
+      "tag": "p",
+      "top": 684,
+      "text": "Neste dashboard é possivel analisar​"
+    },
+    {
+      "tag": "p",
+      "top": 726,
+      "text": "​"
+    },
+    {
+      "tag": "p",
+      "top": 741,
+      "text": "- A receita operacional e a margem de contribuição mês a mês\n- A abertura da receita e da margem por modelo de venda e tipo de produto\n- A margem de contribuição aberta por fornecedor\n- O melhor mês de performance tanto em receita quando em margem"
+    },
+    {
+      "tag": "p",
+      "top": 842,
+      "text": "- O Lucro operacional ao longo do periodo"
+    },
+    {
+      "tag": "p",
+      "top": 867,
+      "text": "- Além disso, através do simulador de cenários, é possivel identificar oportunidades para aumentar o lucro operacional"
+    },
+    {
+      "tag": "p",
+      "top": 943,
+      "text": "Conseguimos observar que as vendas estão concentradas em produtos alimentícios principalmente no varejo, além disso, houve uma queda geral em dezembro, com uma baixa performance na receita, porém sem afetar muito a margem. Outro fator preocupante é a concentração de 52% da receita no fornecedor Moinho Dois Irmãos, criando uma dependência do fornecedor, diminuindo o poder de negociação para novos produtos."
+    },
+    {
+      "tag": "p",
+      "top": 1043,
+      "text": "​"
+    },
+    {
+      "tag": "p",
+      "top": 1069,
+      "text": "É Possivel chegar nos seguintes insights:"
+    },
+    {
+      "tag": "p",
+      "top": 1116,
+      "text": "- É necessária uma campanha mais forte para o final de ano"
+    },
+    {
+      "tag": "p",
+      "top": 1141,
+      "text": "- Aumentar a diluição de fornecedores, como sugestão seria interessante aumentar a participação do fornecedor Kappa Bebidas que tem a melhor margem entre os fornecedores"
+    },
+    {
+      "tag": "p",
+      "top": 1191,
+      "text": "- Melhorar as negociações da equipe de vendas online, que detém a pior margem de contribuição dos três modelos"
+    },
+    {
+      "tag": "p",
+      "top": 1318,
+      "text": "© 2025 by Diogo Silva. Powered and secured by Wix"
+    },
+    {
+      "tag": "a",
+      "top": 1318,
+      "text": "Wix",
+      "href": "https://wix.com/?utm_campaign=vir_created_with"
+    }
+  ],
+  "powerbi": [
+    {
+      "embed": "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_0e072704a7e9e57c39ed809183828791.html",
+      "report": "https://app.powerbi.com/view?r=eyJrIjoiYzI4MzhmNzAtNTZmMi00OGFjLWJjYzAtZDk0M2U4MjQ1OTg0IiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9",
+      "title": "Dashboard de financeiro e vendas"
+    }
+  ]
+}

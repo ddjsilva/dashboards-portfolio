@@ -1,0 +1,128 @@
+{
+  "url": "https://www.diogosilvaportfolio.com/c%C3%B3pia-dashboard-people-analytics",
+  "httpStatus": 200,
+  "title": "Dashboard Supply chain | Portfólio Diogo Silva",
+  "description": "",
+  "pageHeightPx": 1009,
+  "sections": [
+    {
+      "tag": "header",
+      "id": "SITE_HEADER",
+      "top": 0,
+      "height": 59,
+      "headings": []
+    },
+    {
+      "tag": "section",
+      "id": "comp-miv0ukhp",
+      "top": 59,
+      "height": 619,
+      "headings": [
+        "DASHBOARD de supply chain"
+      ]
+    },
+    {
+      "tag": "section",
+      "id": "comp-miv0ukia4",
+      "top": 678,
+      "height": 211,
+      "headings": []
+    },
+    {
+      "tag": "footer",
+      "id": "SITE_FOOTER",
+      "top": 889,
+      "height": 120,
+      "headings": []
+    }
+  ],
+  "iframes": [
+    "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_1e4d045fde29483187fc9144ff65fcfc.html"
+  ],
+  "images": [],
+  "blocks": [
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HOME"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "EXPERIENCIAS"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "HABILIDADES"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "PORTFÓLIO"
+    },
+    {
+      "tag": "p",
+      "top": 9,
+      "text": "CONTATO"
+    },
+    {
+      "tag": "h1",
+      "top": 69,
+      "text": "DASHBOARD de supply chain"
+    },
+    {
+      "tag": "p",
+      "top": 684,
+      "text": "Neste dashboard é possivel analisar​"
+    },
+    {
+      "tag": "p",
+      "top": 726,
+      "text": "​​"
+    },
+    {
+      "tag": "p",
+      "top": 741,
+      "text": "- Pedidos entregues por estado"
+    },
+    {
+      "tag": "p",
+      "top": 766,
+      "text": "- Lead times de entrega"
+    },
+    {
+      "tag": "p",
+      "top": 791,
+      "text": "- Pedidos entregues no prazo (Ontime)"
+    },
+    {
+      "tag": "p",
+      "top": 817,
+      "text": "- Pedidos com ruptura (Stockout)"
+    },
+    {
+      "tag": "p",
+      "top": 842,
+      "text": "- Pedidos entregues no prazo e sem ruptura (OTIF)​​"
+    },
+    {
+      "tag": "p",
+      "top": 943,
+      "text": "© 2025 by Diogo Silva. Powered and secured by Wix"
+    },
+    {
+      "tag": "a",
+      "top": 943,
+      "text": "Wix",
+      "href": "https://wix.com/?utm_campaign=vir_created_with"
+    }
+  ],
+  "powerbi": [
+    {
+      "embed": "https://www-diogosilvaportfolio-com.filesusr.com/html/c1246e_1e4d045fde29483187fc9144ff65fcfc.html",
+      "report": "https://app.powerbi.com/view?r=eyJrIjoiMDE5NjlmY2ItZjNkOS00Y2I5LTkxZGQtOTY1ZWE2MWYyYzczIiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9",
+      "title": "Dashboard Supplychain"
+    }
+  ]
+}

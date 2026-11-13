@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+/*
+  Paleta do briefing. O lilás do briefing (#8B6FE8) fica para fundos, detalhes e
+  texto sobre fundo escuro; sobre branco ele não passa no contraste AA (3,8:1),
+  então texto, links e botões usam o lilás mais fechado (#6E50D8, 5,5:1).
+*/
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #ffffff;
+  --color-mist: #f6f3fe; /* fundo alternado */
+  --color-lilac-200: #d9cffa; /* bordas, tags */
+  --color-lilac-300: #b8a6f5; /* texto lilás sobre escuro */
+  --color-lilac-500: #8b6fe8; /* destaque do briefing */
+  --color-lilac-600: #6e50d8; /* destaque para texto/botões sobre claro */
+  --color-lilac-700: #5a3fc0; /* hover */
+  --color-ink: #0e0e12;
+  --color-ink-soft: #5b5b66;
+  --color-night: #111017; /* faixas escuras */
+  --color-night-line: #26232f;
+
+  --shadow-card: 0 1px 2px rgb(14 14 18 / 0.04), 0 8px 24px -12px rgb(14 14 18 / 0.08);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-sans text-[17px] leading-relaxed text-ink antialiased md:text-lg;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-medium tracking-tight text-balance;
+  }
+  p {
+    @apply text-pretty;
+  }
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-lilac-600;
+  }
+  ::selection {
+    @apply bg-lilac-200 text-ink;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[76rem] px-4 sm:px-6 lg:px-10;
+  }
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-medium text-lilac-600;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply size-1.5 rounded-full bg-lilac-500;
+  }
+  .section-title {
+    @apply mt-4 text-3xl leading-[1.12] sm:text-4xl lg:text-5xl;
+  }
+  .section-title .soft {
+    @apply text-ink-soft/70;
+  }
+  /* Texto em Markdown dos cases (corpo do arquivo em src/content/projetos/) */
+  .prose-case {
+    @apply text-ink-soft md:text-xl md:leading-relaxed;
+  }
+  .prose-case > * + * {
+    @apply mt-5;
+  }
+  .prose-case :is(h2, h3) {
+    @apply mt-10 text-xl text-ink md:text-2xl;
+  }
+  .prose-case :is(ul, ol) {
+    @apply flex flex-col gap-2 pl-5;
+  }
+  .prose-case ul {
+    @apply list-disc marker:text-lilac-500;
+  }
+  .prose-case ol {
+    @apply list-decimal marker:text-lilac-600;
+  }
+  .prose-case strong {
+    @apply font-medium text-ink;
+  }
+  .prose-case a {
+    @apply text-lilac-600 underline underline-offset-4;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-base font-medium transition-colors duration-200;
+  }
+  /* usar junto com .btn: class="btn btn-primary" */
+  .btn-primary {
+    @apply bg-lilac-600 text-white hover:bg-lilac-700;
+  }
+  .btn-ghost {
+    @apply border border-ink/15 text-ink hover:border-lilac-600 hover:text-lilac-600;
+  }
+  .btn-dark {
+    @apply bg-ink text-white hover:bg-lilac-700;
+  }
+}
+
+/* Surgir suave ao rolar. Sem JS ou com movimento reduzido, tudo aparece direto. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.8s var(--ease-out-soft),
+      transform 0.8s var(--ease-out-soft);
+    transition-delay: calc(var(--reveal-delay, 0) * 90ms);
+  }
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

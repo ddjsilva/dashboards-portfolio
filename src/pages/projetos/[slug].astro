@@ -1,0 +1,179 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PowerBIEmbed from '../../components/PowerBIEmbed.astro';
+import { contact } from '../../site';
+
+// Só cases com link do embed ganham página; os outros aparecem como "Em breve" na home.
+export async function getStaticPaths() {
+  const ready = (await getCollection('projetos'))
+    .filter((p) => p.data.embedUrl)
+    .sort((a, b) => a.data.order - b.data.order);
+
+  return ready.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, next: ready.length > 1 ? ready[(i + 1) % ready.length] : undefined },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projetos'>;
+  next?: CollectionEntry<'projetos'>;
+}
+
+const { project, next } = Astro.props;
+const { title, area, summary, problem, context, questions, tools, cover, coverAlt, embedUrl } = project.data;
+const { Content } = await render(project);
+---
+
+<Base title={`${title} | Diogo Silva`} description={summary} ogImage={cover}>
+  <!-- Abertura do case -->
+  <section class="pt-28 pb-12 md:pt-36 md:pb-16">
+    <div class="container-site">
+      <a href="/#projetos" class="inline-flex items-center gap-2 text-sm text-ink-soft transition-colors hover:text-lilac-600">
+        <svg viewBox="0 0 16 16" class="size-3.5" aria-hidden="true"
+          ><path d="M13 8H3M7 4 3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg
+        >
+        Todos os projetos
+      </a>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-16">
+        <div>
+          <p class="eyebrow" data-reveal>{area}</p>
+          <h1 class="mt-4 text-[2.5rem] leading-[1.06] sm:text-6xl lg:text-[4rem]" data-reveal style="--reveal-delay:1">
+            {title}
+          </h1>
+          <p class="mt-6 max-w-2xl text-ink-soft md:text-xl md:leading-relaxed" data-reveal style="--reveal-delay:2">
+            {summary}
+          </p>
+        </div>
+
+        <dl class="grid gap-5 border-t border-ink/[.08] pt-6 text-base sm:grid-cols-2 lg:grid-cols-1" data-reveal style="--reveal-delay:3">
+          <div>
+            <dt class="text-sm text-ink-soft">O problema</dt>
+            <dd class="mt-1 font-medium">{problem}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-ink-soft">Ferramentas</dt>
+            <dd class="mt-2">
+              <ul class="flex flex-wrap gap-2">
+                {tools.map((t) => <li class="rounded-full border border-lilac-200 bg-mist px-3 py-1 text-sm">{t}</li>)}
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contexto -->
+  <section class="section bg-mist" aria-labelledby="contexto-titulo">
+    <div class="container-site grid gap-12 lg:grid-cols-2 lg:gap-20">
+      <div data-reveal>
+        <p class="eyebrow">Contexto</p>
+        <h2 id="contexto-titulo" class="section-title">Para quem é <span class="soft">e qual era a dor.</span></h2>
+        <p class="mt-6 text-ink-soft md:text-xl md:leading-relaxed">{context}</p>
+      </div>
+
+      <div data-reveal style="--reveal-delay:1">
+        <h3 class="text-xl md:text-2xl">O que o painel responde</h3>
+        <ol class="mt-6 flex flex-col gap-3">
+          {
+            questions.map((q, i) => (
+              <li class="flex gap-4 rounded-2xl bg-white p-5 shadow-card">
+                <span class="text-sm font-medium text-lilac-600 tabular-nums">0{i + 1}</span>
+                <span class="text-base">{q}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section class="section" aria-labelledby="dashboard-titulo">
+    <div class="container-site">
+      <div class="mb-10 max-w-3xl" data-reveal>
+        <p class="eyebrow">Dashboard</p>
+        <h2 id="dashboard-titulo" class="section-title">Navegue pelo painel.</h2>
+      </div>
+      <div data-reveal style="--reveal-delay:1">
+        {embedUrl && <PowerBIEmbed url={embedUrl} title={title} cover={cover} coverAlt={coverAlt} />}
+      </div>
+    </div>
+  </section>
+
+  <!-- Resultados e bastidores -->
+  <section class="section pt-0 md:pt-0 lg:pt-0" aria-labelledby="resultados-titulo">
+    <div class="container-site grid gap-8 border-t border-ink/[.08] pt-16 md:pt-20 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+      <div data-reveal>
+        <p class="eyebrow">Resultados e bastidores</p>
+        <h2 id="resultados-titulo" class="section-title">O que o painel mostrou.</h2>
+      </div>
+      <div class="prose-case" data-reveal style="--reveal-delay:1">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <!-- Chamada final -->
+  <section class="px-2 pb-6 sm:px-4" aria-labelledby="cta-titulo">
+    <div class="container-site !px-0 sm:!px-0 lg:!px-10">
+      <div class="relative isolate overflow-hidden rounded-[1.75rem] bg-night px-6 py-14 text-white sm:px-12 md:rounded-[2.25rem] md:py-20 lg:px-16">
+        <div
+          aria-hidden="true"
+          class="absolute -right-40 -bottom-60 -z-10 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(closest-side,rgb(139_111_232/0.35),transparent)]"
+        >
+        </div>
+        <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+          <div data-reveal>
+            <h2 id="cta-titulo" class="section-title mt-0">Gostou do que viu? <span class="text-white/45">Vamos trocar ideias sobre dados.</span></h2>
+            <p class="mt-5 max-w-lg text-white/65">Será um prazer conversar com você.</p>
+          </div>
+          <div class="flex flex-wrap gap-3 lg:justify-end" data-reveal style="--reveal-delay:1">
+            <a href={contact.linkedin.href} target="_blank" rel="noopener" class="btn bg-lilac-500 text-ink hover:bg-lilac-300">
+              Conversar no LinkedIn
+            </a>
+            <a href={contact.email.href} class="btn border border-white/15 text-white hover:border-lilac-300 hover:text-lilac-300">Enviar um e-mail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Próximo projeto -->
+  {
+    next && (
+      <section class="py-16 md:py-24" aria-label="Próximo projeto">
+        <div class="container-site">
+          <a
+            href={`/projetos/${next.id}`}
+            class="group grid items-center gap-6 rounded-[1.5rem] border border-ink/[.08] p-3 transition-colors duration-300 hover:border-lilac-200 hover:bg-mist sm:grid-cols-[minmax(0,16rem)_1fr_auto] sm:gap-8 sm:pr-8"
+          >
+            <div class="aspect-video overflow-hidden rounded-xl bg-night-line">
+              <Image
+                src={next.data.cover}
+                alt=""
+                widths={[320, 480, 640]}
+                sizes="(min-width: 640px) 256px, 90vw"
+                class="size-full object-cover object-top transition-transform duration-700 ease-out-soft group-hover:scale-[1.04]"
+              />
+            </div>
+            <div class="px-2 pb-2 sm:p-0">
+              <p class="text-sm text-ink-soft">Próximo projeto</p>
+              <p class="mt-1 text-2xl font-medium tracking-tight md:text-3xl">{next.data.title}</p>
+              <p class="mt-2 text-base text-ink-soft">{next.data.problem}</p>
+            </div>
+            <span class="hidden size-12 place-items-center rounded-full bg-ink text-white transition-colors group-hover:bg-lilac-600 sm:grid">
+              <svg viewBox="0 0 16 16" class="size-4" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+    )
+  }
+</Base>

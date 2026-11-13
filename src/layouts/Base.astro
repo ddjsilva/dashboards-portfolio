@@ -1,0 +1,89 @@
+---
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
+import { getImage } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../site';
+import defaultOg from '../assets/projetos/supply-chain.png';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: ImageMetadata;
+}
+
+const { title = site.title, description = site.description, ogImage = defaultOg } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const og = await getImage({ src: ogImage, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
+const ogUrl = new URL(og.src, Astro.site);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a
+      href="#conteudo"
+      class="sr-only z-[60] rounded-full bg-ink px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >Pular para o conteúdo</a
+    >
+    <Header />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <Footer />
+    <Analytics />
+
+    <script>
+      // Links como /#contato vindos de outra página: a rolagem suave do CSS é interrompida
+      // enquanto a home carrega e a página fica no topo. Aqui garantimos o salto até a seção.
+      if (location.hash) {
+        const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (target) {
+          const go = () => target.scrollIntoView({ behavior: 'instant', block: 'start' });
+          requestAnimationFrame(go);
+          window.addEventListener('load', go, { once: true });
+        }
+      }
+
+      // Surgir suave ao rolar (o CSS ignora isto quando o usuário prefere menos movimento).
+      const items = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+      );
+      items.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

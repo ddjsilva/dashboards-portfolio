@@ -1,0 +1,24 @@
+---
+import Logo from './Logo.astro';
+import { contact } from '../site';
+const year = new Date().getFullYear();
+const channels = [contact.linkedin, contact.email];
+---
+
+<footer class="border-t border-ink/[.06]">
+  <div class="container-site flex flex-col gap-6 py-10 text-[15px] md:flex-row md:items-center md:justify-between">
+    <Logo />
+    <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink-soft">
+      {
+        channels.map((c) => (
+          <li>
+            <a href={c.href} class="transition-colors hover:text-lilac-600" target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener">
+              {c.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-ink-soft">© {year} Diogo Silva</p>
+  </div>
+</footer>

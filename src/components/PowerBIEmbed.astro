@@ -1,0 +1,88 @@
+---
+/*
+  Embed do Power BI ("Publicar na Web") que só carrega quando o visitante pede.
+
+  - Antes do clique: capa do dashboard + botão "Abrir dashboard interativo". Nenhum iframe na página.
+  - Telas a partir de 768px: o clique troca a capa pelo iframe 16:9.
+  - Celular (ou sem JavaScript): o botão é um link que abre o relatório em tela cheia numa nova aba.
+*/
+import { Image } from 'astro:assets';
+
+interface Props {
+  url: string;
+  title: string;
+  cover: ImageMetadata;
+  coverAlt: string;
+}
+
+const { url, title, cover, coverAlt } = Astro.props;
+---
+
+<div
+  data-pbi
+  class="relative overflow-hidden rounded-[1.25rem] bg-[linear-gradient(135deg,#8b6fe8_0%,#6e50d8_50%,#4a2fa8_100%)] p-1 shadow-[0_40px_80px_-40px_rgb(110_80_216/0.55)] md:rounded-[1.75rem] md:p-1.5"
+>
+  <div data-pbi-frame class="relative aspect-video overflow-hidden rounded-[1rem] bg-night-line md:rounded-[1.4rem]">
+    <Image
+      src={cover}
+      alt={coverAlt}
+      widths={[640, 960, 1280, 1600]}
+      sizes="(min-width: 1216px) 1150px, 96vw"
+      loading="eager"
+      class="size-full object-cover object-top"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-night/85 via-night/30 to-night/10"></div>
+
+    <div class="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-4 sm:p-6 md:flex-row md:items-end md:justify-between md:p-8">
+      <a
+        data-pbi-open
+        href={url}
+        target="_blank"
+        rel="noopener"
+        class="btn bg-white text-ink shadow-lg hover:bg-lilac-200"
+        aria-label={`Abrir dashboard interativo: ${title}`}
+      >
+        <svg viewBox="0 0 16 16" class="size-4" aria-hidden="true"
+          ><path d="M5 3.5v9l7-4.5-7-4.5Z" fill="currentColor"></path></svg
+        >
+        Abrir dashboard interativo
+      </a>
+      <p class="text-sm text-white/75">
+        <span class="md:hidden">Abre em tela cheia, numa nova aba.</span>
+        <span class="hidden md:inline">Navegue, filtre e clique, como se fosse seu.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<p data-pbi-help hidden class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
+  <span>Os dados são carregados direto do Power BI e podem levar alguns segundos.</span>
+  <a href={url} target="_blank" rel="noopener" class="font-medium text-lilac-600 underline-offset-4 hover:underline"
+    >Abrir em tela cheia ↗</a
+  >
+</p>
+
+<script>
+  const desktop = window.matchMedia('(min-width: 768px)');
+
+  document.querySelectorAll<HTMLElement>('[data-pbi]').forEach((root) => {
+    const open = root.querySelector<HTMLAnchorElement>('[data-pbi-open]')!;
+    const frame = root.querySelector<HTMLElement>('[data-pbi-frame]')!;
+    const help = root.nextElementSibling as HTMLElement | null;
+
+    open.addEventListener('click', (e) => {
+      if (!desktop.matches) return; // celular: segue o link para a nova aba
+      e.preventDefault();
+
+      const iframe = document.createElement('iframe');
+      iframe.src = open.href;
+      iframe.title = open.getAttribute('aria-label')?.replace('Abrir dashboard interativo: ', 'Dashboard ') ?? 'Dashboard';
+      iframe.allowFullscreen = true;
+      iframe.className = 'absolute inset-0 size-full border-0 bg-white';
+
+      frame.replaceChildren(iframe);
+      if (help?.hasAttribute('data-pbi-help')) help.hidden = false;
+      iframe.focus();
+    });
+  });
+</script>

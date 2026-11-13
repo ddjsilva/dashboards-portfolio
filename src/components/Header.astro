@@ -1,0 +1,106 @@
+---
+import Logo from './Logo.astro';
+import { nav } from '../site';
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[background-color,border-color,backdrop-filter] duration-300 data-[scrolled]:border-ink/[.06] data-[scrolled]:bg-white/80 data-[scrolled]:backdrop-blur-md"
+>
+  <div class="container-site flex h-16 items-center justify-between gap-6 md:h-[4.5rem]">
+    <Logo />
+
+    <nav aria-label="Principal" class="hidden lg:block">
+      <ul class="flex items-center gap-1">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="rounded-full px-3.5 py-2 text-[15px] text-ink-soft transition-colors hover:text-ink"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="/#contato" class="btn btn-dark hidden px-4 py-2.5 text-[15px] whitespace-nowrap sm:inline-flex">
+        Vamos conversar
+        <svg viewBox="0 0 16 16" class="size-3.5" aria-hidden="true"
+          ><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg
+        >
+      </a>
+      <button
+        id="menu-toggle"
+        type="button"
+        class="grid size-11 place-items-center rounded-full text-ink lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="sr-only">Abrir menu</span>
+        <svg viewBox="0 0 24 24" class="size-6" aria-hidden="true">
+          <path class="menu-line-1 origin-center transition-transform duration-300" d="M4 8h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+          <path class="menu-line-2 origin-center transition-transform duration-300" d="M4 16h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-ink/[.06] bg-white lg:hidden">
+    <nav aria-label="Principal (celular)" class="container-site py-4">
+      <ul class="flex flex-col">
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} class="block border-b border-ink/[.06] py-4 text-xl tracking-tight">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a href="/#contato" class="btn btn-dark mt-6 w-full">Vamos conversar</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #site-header[data-open] .menu-line-1 {
+    transform: translateY(4px) rotate(45deg);
+  }
+  #site-header[data-open] .menu-line-2 {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  #site-header[data-open] {
+    background: #fff;
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header')!;
+  const toggle = document.getElementById('menu-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+
+  const onScroll = () => header.toggleAttribute('data-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const setOpen = (open: boolean) => {
+    header.toggleAttribute('data-open', open);
+    menu.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.querySelector('.sr-only')!.textContent = open ? 'Fechar menu' : 'Abrir menu';
+  };
+  toggle.addEventListener('click', () => setOpen(!header.hasAttribute('data-open')));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header.hasAttribute('data-open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+</script>

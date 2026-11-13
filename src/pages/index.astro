@@ -1,0 +1,371 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { contact } from '../site';
+import photo from '../assets/diogo.jpeg';
+import heroSideImg from '../assets/hero-people-analytics.png';
+
+const projetos = (await getCollection('projetos')).sort((a, b) => a.data.order - b.data.order);
+const heroMain = projetos.find((p) => p.id === 'comercial') ?? projetos[0];
+
+const pains = [
+  {
+    title: 'Planilhas que não conversam',
+    text: 'Vendas numa planilha, financeiro em outra, estoque no sistema. Cada área tem um número diferente.',
+  },
+  {
+    title: 'Relatório que chega tarde',
+    text: 'Quando o fechamento fica pronto, o mês já passou. E a decisão foi tomada sem ele.',
+  },
+  {
+    title: 'Decisão no feeling',
+    text: 'Sem um painel confiável, a reunião vira uma discussão sobre qual número está certo.',
+  },
+];
+
+const services = [
+  {
+    title: 'Entender o problema',
+    text: 'Antes de qualquer gráfico, defino quais decisões o painel precisa apoiar e se os dados disponíveis conseguem respondê-las.',
+    items: ['Mapa das fontes de dados', 'Indicadores que importam', 'Plano do que construir'],
+  },
+  {
+    title: 'Construir o painel',
+    text: 'Reúno planilhas, arquivos, bases de dados e transformo em dashboards no Power BI que se atualizam sozinhos e mostram o que importa num só lugar.',
+    items: ['Painel sob medida', 'Atualização automática', 'Navegação intuitiva'],
+  },
+  {
+    title: 'Refinar e documentar',
+    text: 'Depois da primeira versão, reviso o painel, ajusto indicadores e registro como ele funciona para que seja fácil de entender e de usar.',
+    items: ['Ajustes e novos indicadores', 'Boas práticas', 'Documentação completa'],
+  },
+];
+
+const facts = [
+  { value: '6+ anos', label: 'trabalhando com dados' },
+  { value: 'FIAP', label: 'pós-graduação em Data Analytics' },
+  { value: 'Projeto do ano', label: 'dashboard premiado na Privalia em 2024' },
+];
+
+const channels = [
+  { ...contact.linkedin, primary: true },
+  { ...contact.email, primary: false },
+];
+
+const arrow =
+  '<svg viewBox="0 0 16 16" class="size-3.5" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+---
+
+<Base>
+  <!-- 1. Abertura -->
+  <section class="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28 lg:pt-40">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -top-40 right-[-20%] -z-10 h-[46rem] w-[46rem] rounded-full bg-[radial-gradient(closest-side,rgb(139_111_232/0.22),transparent)] lg:right-[-8%]"
+    >
+    </div>
+
+    <div class="container-site grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
+      <div>
+        <p class="eyebrow" data-reveal>Business Intelligence</p>
+        <h1 class="mt-5 text-[2.5rem] leading-[1.06] sm:text-6xl lg:text-[3.6rem] xl:text-[4rem]" data-reveal style="--reveal-delay:1">
+          Dados soltos viram histórias <span class="text-ink-soft/60">que ajudam a decidir.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-ink-soft md:text-xl md:leading-relaxed" data-reveal style="--reveal-delay:2">
+          Cada projeto parte de uma pergunta real e termina em um dashboard que ajuda na tomada de decisão. No meio do
+          caminho, dados dispersos viram respostas.
+        </p>
+        <div class="mt-9" data-reveal style="--reveal-delay:3">
+          <a href="#projetos" class="btn btn-ghost">
+            Ver projetos
+            <svg viewBox="0 0 16 16" class="size-3.5" aria-hidden="true"
+              ><path d="M8 3v10M4 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg
+            >
+          </a>
+        </div>
+      </div>
+
+      <!-- Composição com capas reais dos dashboards -->
+      <div class="relative mx-auto w-full max-w-xl pb-10 sm:pb-14 lg:max-w-none" data-reveal style="--reveal-delay:2" aria-hidden="true">
+        <div class="relative ml-auto w-[88%] overflow-hidden rounded-2xl border border-ink/[.06] bg-white p-1.5 shadow-[0_30px_60px_-30px_rgb(46_24_120/0.35)]">
+          <Image
+            src={heroMain.data.cover}
+            alt=""
+            widths={[560, 840, 1120]}
+            sizes="(min-width: 1024px) 560px, 88vw"
+            loading="eager"
+            fetchpriority="high"
+            class="aspect-video w-full rounded-xl object-cover object-top"
+          />
+        </div>
+        <div class="absolute bottom-0 left-0 w-[52%] overflow-hidden rounded-xl border border-white/60 bg-white p-1 shadow-[0_24px_48px_-20px_rgb(46_24_120/0.4)]">
+          <Image
+            src={heroSideImg}
+            alt=""
+            widths={[360, 540, 720]}
+            sizes="(min-width: 1024px) 320px, 50vw"
+            loading="eager"
+            class="aspect-video w-full rounded-lg object-cover object-top"
+          />
+        </div>
+        <div class="absolute top-[12%] left-[2%] hidden rounded-full border border-white/70 bg-white/80 px-4 py-2 text-sm shadow-card backdrop-blur sm:block">
+          <span class="mr-1.5 inline-block size-2 rounded-full bg-lilac-500"></span>
+          {projetos.length} dashboards para navegar
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. O problema -->
+  <section class="section bg-mist" aria-labelledby="problema-titulo">
+    <div class="container-site">
+      <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
+        <div data-reveal>
+          <p class="eyebrow">O problema</p>
+          <h2 id="problema-titulo" class="section-title">Os dados existem. <span class="soft">Falta enxergar o que eles dizem.</span></h2>
+        </div>
+        <p class="max-w-md text-ink-soft lg:justify-self-end" data-reveal style="--reveal-delay:1">
+          A maioria das empresas não tem falta de dados. Tem dados demais, em lugares demais.
+        </p>
+      </div>
+
+      <ol class="mt-14 grid gap-4 md:grid-cols-3 md:gap-5">
+        {
+          pains.map((p, i) => (
+            <li class="rounded-2xl bg-white p-7 shadow-card md:p-8" data-reveal style={`--reveal-delay:${i}`}>
+              <span class="text-sm font-medium text-lilac-600 tabular-nums">0{i + 1}</span>
+              <h3 class="mt-8 text-xl md:text-2xl">{p.title}</h3>
+              <p class="mt-3 text-base text-ink-soft">{p.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. Como eu trabalho -->
+  <section class="section" aria-labelledby="servicos-titulo">
+    <div class="container-site">
+      <div class="max-w-3xl" data-reveal>
+        <p class="eyebrow">Como eu trabalho</p>
+        <h2 id="servicos-titulo" class="section-title">Todo caso segue o mesmo caminho: <span class="soft">entender, construir, refinar.</span></h2>
+      </div>
+
+      <div class="mt-14 grid gap-4 md:grid-cols-3 md:gap-5">
+        {
+          services.map((s, i) => (
+            <article
+              class="flex flex-col rounded-2xl border border-ink/[.08] p-7 transition-colors duration-300 hover:border-lilac-200 md:p-8"
+              data-reveal
+              style={`--reveal-delay:${i}`}
+            >
+              <h3 class="text-xl md:text-2xl">{s.title}</h3>
+              <p class="mt-3 text-base text-ink-soft">{s.text}</p>
+              <ul class="mt-8 flex flex-wrap gap-2 pt-2 md:mt-auto">
+                {s.items.map((item) => (
+                  <li class="rounded-full border border-lilac-200 bg-mist px-3 py-1 text-sm text-ink">{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Projetos (faixa escura: os dashboards são o elemento mais colorido) -->
+  <section id="projetos" class="px-2 sm:px-4" aria-labelledby="projetos-titulo">
+    <div class="relative isolate overflow-hidden rounded-[1.75rem] bg-night py-20 text-white md:rounded-[2.25rem] md:py-28 lg:py-32">
+      <div
+        aria-hidden="true"
+        class="absolute -top-60 left-1/2 -z-10 h-[40rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(139_111_232/0.28),transparent)]"
+      >
+      </div>
+      <div class="container-site">
+        <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
+          <div data-reveal>
+            <p class="eyebrow text-lilac-300">Projetos</p>
+            <h2 id="projetos-titulo" class="section-title">Painéis reais, <span class="text-white/45">para você navegar.</span></h2>
+          </div>
+          <p class="max-w-md text-white/65 lg:justify-self-end" data-reveal style="--reveal-delay:1">
+            Cada projeto começa por um problema de negócio. Abra o case, veja o contexto e use o dashboard como se fosse
+            seu.
+          </p>
+        </div>
+
+        <div class="mt-14" data-carousel>
+          <ul
+            data-carousel-track
+            tabindex="0"
+            aria-label="Projetos. Use as setas do teclado para navegar."
+            class="-m-1 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth p-1 [scrollbar-width:none] md:gap-6 [&::-webkit-scrollbar]:hidden"
+          >
+            {
+              projetos.map((p, i) => (
+                <li class="w-[84%] shrink-0 snap-start sm:w-[62%] md:w-[45%]">
+                  <ProjectCard project={p} delay={i % 2} />
+                </li>
+              ))
+            }
+          </ul>
+
+          <div data-carousel-controls class="mt-8 flex items-center gap-6">
+            <div class="h-px flex-1 bg-white/10">
+              <div data-carousel-progress class="h-px w-0 bg-lilac-300 transition-[width] duration-300"></div>
+            </div>
+            <div class="flex gap-2">
+              <button
+                type="button"
+                data-carousel-prev
+                aria-label="Projetos anteriores"
+                class="grid size-11 place-items-center rounded-full border border-white/15 text-white transition-colors hover:border-lilac-300 hover:text-lilac-300 disabled:pointer-events-none disabled:opacity-30"
+              >
+                <svg viewBox="0 0 16 16" class="size-4" aria-hidden="true"
+                  ><path d="M13 8H3M7 4 3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg
+                >
+              </button>
+              <button
+                type="button"
+                data-carousel-next
+                aria-label="Próximos projetos"
+                class="grid size-11 place-items-center rounded-full border border-white/15 text-white transition-colors hover:border-lilac-300 hover:text-lilac-300 disabled:pointer-events-none disabled:opacity-30"
+              >
+                <svg viewBox="0 0 16 16" class="size-4" aria-hidden="true"
+                  ><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Sobre mim -->
+  <section id="sobre" class="section bg-mist" aria-labelledby="sobre-titulo">
+    <div class="container-site grid items-center gap-12 md:grid-cols-[0.8fr_1fr] lg:gap-20">
+      <div class="relative mx-auto w-full max-w-sm md:max-w-none" data-reveal>
+        <Image
+          src={photo}
+          alt="Foto de Diogo Silva, de óculos e camisa branca, em um escritório"
+          widths={[400, 640, 900]}
+          sizes="(min-width: 768px) 40vw, 90vw"
+          class="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+        />
+      </div>
+
+      <div>
+        <div data-reveal>
+          <p class="eyebrow">Sobre mim</p>
+          <h2 id="sobre-titulo" class="section-title">Oi, eu sou o Diogo.</h2>
+        </div>
+        <p class="mt-6 text-ink-soft md:text-xl md:leading-relaxed" data-reveal style="--reveal-delay:1">
+          Há mais de 6 anos trabalho com dados, ajudando lideranças a trocar planilhas soltas por painéis que mostram o
+          que importa. Sou formado em Administração e pós-graduado em Data Analytics pela FIAP. Por isso falo a língua do
+          negócio antes da língua técnica.
+        </p>
+
+        <dl class="mt-10 grid gap-6 border-t border-lilac-200 pt-8 sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3" data-reveal style="--reveal-delay:2">
+          {
+            facts.map((f) => (
+              <div>
+                <dt class="sr-only">{f.label}</dt>
+                <dd class="text-xl font-medium tracking-tight md:text-2xl">{f.value}</dd>
+                <dd class="mt-1 text-sm text-ink-soft">{f.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Contato -->
+  <section id="contato" class="px-2 py-20 sm:px-4 md:py-28" aria-labelledby="contato-titulo">
+    <div class="container-site !px-0 sm:!px-0 lg:!px-10">
+      <div class="relative isolate overflow-hidden rounded-[1.75rem] bg-night px-6 py-16 text-white sm:px-12 md:rounded-[2.25rem] md:py-20 lg:px-16">
+        <div
+          aria-hidden="true"
+          class="absolute -right-40 -bottom-60 -z-10 h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(closest-side,rgb(139_111_232/0.35),transparent)]"
+        >
+        </div>
+        <div class="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
+          <div data-reveal>
+            <p class="eyebrow text-lilac-300">Contato</p>
+            <h2 id="contato-titulo" class="section-title">Vamos conversar <span class="text-white/45">sobre dados?</span></h2>
+            <p class="mt-6 max-w-lg text-white/65">
+              Vamos trocar ideias sobre dados! Me conte em poucas linhas o que você quer explorar. Será um prazer
+              conversar.
+            </p>
+          </div>
+
+          <ul class="flex flex-col gap-3" data-reveal style="--reveal-delay:1">
+            {
+              channels.map((c) => (
+                <li>
+                  <a
+                    href={c.href}
+                    target={c.href.startsWith('http') ? '_blank' : undefined}
+                    rel="noopener"
+                    class:list={[
+                      'group flex items-center justify-between gap-4 rounded-2xl px-5 py-4 transition-colors duration-200 sm:px-6',
+                      c.primary ? 'bg-lilac-500 text-ink hover:bg-lilac-300' : 'border border-white/10 hover:border-lilac-300/60 hover:bg-white/[.04]',
+                    ]}
+                  >
+                    <span class="flex min-w-0 flex-col">
+                      <span class:list={['text-sm', c.primary ? 'text-ink/70' : 'text-white/55']}>{c.label}</span>
+                      <span class="text-base font-medium [overflow-wrap:anywhere] sm:text-lg">{c.display}</span>
+                    </span>
+                    <span class="shrink-0 transition-transform duration-300 group-hover:translate-x-1" set:html={arrow} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Carrossel de projetos: rolagem nativa com snap; as setas avançam um card por vez.
+  // Se todos os cards cabem na tela, os controles somem.
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('[data-carousel-track]')!;
+    const prev = root.querySelector<HTMLButtonElement>('[data-carousel-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-carousel-next]')!;
+    const progress = root.querySelector<HTMLElement>('[data-carousel-progress]')!;
+    const controls = root.querySelector<HTMLElement>('[data-carousel-controls]')!;
+
+    const step = () => {
+      const item = track.querySelector('li');
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return item ? item.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      controls.hidden = max <= 1;
+      prev.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft >= max - 1;
+      const visible = track.clientWidth / track.scrollWidth;
+      const scrolled = max > 0 ? (track.scrollLeft / max) * (1 - visible) : 0;
+      progress.style.width = `${Math.min(100, (visible + scrolled) * 100)}%`;
+    };
+
+    prev.addEventListener('click', () => track.scrollBy({ left: -step() }));
+    next.addEventListener('click', () => track.scrollBy({ left: step() }));
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        track.scrollBy({ left: e.key === 'ArrowRight' ? step() : -step() });
+      }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(track);
+    update();
+  });
+</script>

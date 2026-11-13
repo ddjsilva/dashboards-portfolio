@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<a href="/" class:list={['group inline-flex items-center gap-2.5 font-medium tracking-tight whitespace-nowrap', className]}>
+  <svg viewBox="0 0 28 28" class="size-7 shrink-0" aria-hidden="true">
+    <rect width="28" height="28" rx="8" class="fill-lilac-600"></rect>
+    <rect x="7" y="15" width="3.2" height="6" rx="1.2" fill="#fff" opacity=".55"></rect>
+    <rect x="12.4" y="11" width="3.2" height="10" rx="1.2" fill="#fff" opacity=".8"></rect>
+    <rect x="17.8" y="7" width="3.2" height="14" rx="1.2" fill="#fff"></rect>
+  </svg>
+  <span>Diogo Silva</span>
+</a>

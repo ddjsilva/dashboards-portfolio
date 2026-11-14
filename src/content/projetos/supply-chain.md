@@ -12,10 +12,10 @@ questions:
   - Qual é o OTIF do período, comparado ao ano anterior?
   - Quantos pedidos tiveram ruptura de estoque (Stockout)?
   - Quanto o prazo real de entrega se distancia do prazo prometido?
-tools: [Power BI, DAX, SQL]
-embedUrl: https://app.powerbi.com/view?r=eyJrIjoiMDE5NjlmY2ItZjNkOS00Y2I5LTkxZGQtOTY1ZWE2MWYyYzczIiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9
+tools: [Power BI, DAX, Power Query]
+embedUrl: https://app.powerbi.com/view?r=eyJrIjoiZjU0YjRlN2YtNWYyNC00OGQyLTk1MzgtN2NmOWUwOGVjNDRlIiwidCI6IjFiMjE5MjNkLTkzNzktNGZhMC04OTdkLTMxZTMxOWU4NjY2ZCJ9
 ---
 
-Compara o lead time prometido ao lead time real de entrega mês a mês, e abre os pedidos entregues por estado.
+O volume de entregas dobrou em relação ao ano anterior, concentrado na região Sudeste, com destaque para São Paulo. Mesmo com esse crescimento, a operação manteve bons resultados: as rupturas de estoque caíram 54% e a taxa de entregas no prazo recuou apenas 4%, muito devido ao começo do ano que teve resultados muito abaixo em comparação ao último ano. A principal oportunidade de melhoria está na definição e no cumprimento dos prazos de entrega.
 
 Dados fictícios.

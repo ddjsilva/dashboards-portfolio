@@ -12,8 +12,8 @@ questions:
   - Qual modelo de venda e qual tipo de produto trazem mais margem?
   - Quanto da receita depende de um único fornecedor?
   - O que acontece com o lucro operacional se eu mudar preço, custo ou mix?
-tools: [Power BI, DAX, Excel]
-embedUrl: https://app.powerbi.com/view?r=eyJrIjoiYzI4MzhmNzAtNTZmMi00OGFjLWJjYzAtZDk0M2U4MjQ1OTg0IiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9
+tools: [Power BI, DAX, SQL]
+embedUrl: https://app.powerbi.com/view?r=eyJrIjoiNGUxYzE0ZTEtNjc1NS00ZjJhLTgxNTMtYTRjZmY5OTA1NDk5IiwidCI6IjFiMjE5MjNkLTkzNzktNGZhMC04OTdkLTMxZTMxOWU4NjY2ZCJ9
 ---
 
 O painel mostrou uma queda de receita em dezembro sem grande impacto na margem, e 52% da receita concentrada em um único fornecedor. As recomendações foram reforçar a campanha de fim de ano, diluir a compra entre fornecedores (com prioridade para o de melhor margem) e rever a negociação no canal online, que tinha a pior margem de contribuição.

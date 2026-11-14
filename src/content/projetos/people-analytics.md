@@ -12,11 +12,11 @@ questions:
   - Em quais cargos, faixas etárias e níveis de escolaridade as pessoas saem mais?
   - Quantas contratações não passam do período de experiência?
   - Quanto gastamos com horas extras e absenteísmo?
-  - Quanto tempo, em média, um colaborador fica na empresa?
-tools: [Power BI, DAX, Excel]
-embedUrl: https://app.powerbi.com/view?r=eyJrIjoiYTAxODYyNTktMzMzNi00N2U3LWE4YzEtNDMyY2Q0MzI2YWM5IiwidCI6ImNlMjdkNDgxLTY0YmMtNDBiYi04ODE5LTgxZWM2NDYyNDM0MCJ9&pageName=7fb2e101f57a3e57d10d
+  - Qual a massa salarial da empresa e aonde está concentrado o maior gasto?
+tools: [Power BI, DAX, Power Query]
+embedUrl: https://app.powerbi.com/view?r=eyJrIjoiM2Q4ZjVlMjktZmY4ZS00MzhmLWE0OWUtYTBlZTA3ZmQyNmY5IiwidCI6IjFiMjE5MjNkLTkzNzktNGZhMC04OTdkLTMxZTMxOWU4NjY2ZCJ9
 ---
 
-Turnover calculado como a rotatividade dos últimos 12 meses, separado em voluntário, involuntário e espontâneo. Os indicadores podem ser abertos por gênero, faixa etária, cargo e escolaridade.
+O turnover se concentra entre os colaboradores mais jovens (~60%), com destaque para o cargo de aprendiz, além disso o turnover espontâneo é o maior entre as categorias. As más contratações (desligamentos no período de experiência) se concentram em cargos operacionais de alta rotatividade, como operador, auxiliar e ajudante. Apesar disso, 2020 vem registrando a menor taxa histórica de turnover, uma queda de 50% frente ao ano anterior, e os custos com horas extras caíram cerca de R$ 20 mil nos últimos 3 meses.
 
 Dados fictícios.

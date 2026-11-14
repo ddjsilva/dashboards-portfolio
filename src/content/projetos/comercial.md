@@ -5,7 +5,7 @@ summary: Vendas, lucro e cobertura de clientes por país e marca, comparando cad
 cover: ../../assets/projetos/comercial.png
 coverAlt: Tela do dashboard Comercial no Power BI com vendas, lucro e margem
 order: 2
-problem: Falta de visibilidade nos resultados de vendas e na margem de lucro.
+problem: Falta de visibilidade das vendas e na margem de lucro.
 context: Para o diretor comercial que precisa saber, sem esperar o fechamento, se as vendas e o lucro estão no caminho certo e em quais países e marcas agir primeiro.
 questions:
   - Quanto vendemos e quanto lucramos neste ano em relação ao anterior?
